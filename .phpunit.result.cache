@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":[]}
+{"version":1,"defects":{"Warning":6,"EmpleadoTest::testArrojarNombreyApellido":4,"EmpleadoTest::testArrojarDNI":4,"EmpleadoTest::testArrojarSalario":4,"EmpleadoTest::testObtenerSector":4,"EmpleadoTest::test__toString":4},"times":{"Warning":0.006,"EmpleadoTest::testArrojarNombreyApellido":0.005,"EmpleadoTest::testArrojarDNI":0,"EmpleadoTest::testArrojarSalario":0,"EmpleadoTest::testObtenerSector":0.001,"EmpleadoTest::test__toString":0}}
