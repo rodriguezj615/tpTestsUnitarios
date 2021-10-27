@@ -2,47 +2,57 @@
 
 class EmpleadoTest extends \PHPUnit\Framework\TestCase
 {
+
     public function crear(
         $nombre="Juan", $apellido="Rodriguez", $dni=37701467, $salario=50000, $sector="No especificado"
     ){
-        $emp= new \app\Empleado($nombre, $apellido, $dni, $salario, $sector);
-        return $emp;
+        $crear= new \app\Empleado($nombre, $apellido, $dni, $salario, $sector);
+        return $crear;
     }
-    public function testArrojarNombreyApellido() 
+    public function testNombreyApellido($nombre,$apellido) 
     {
-        $emp = $this->crear ("Juan", "Rodriguez");
-        $this->assertEquals("Juan Rodriguez", $emp->getNombreApellido());
+        $c= $this->crear ();
+        $this->assertSame($nombre.$apellido, $c->getNombreApellido());
     }
 
-    public function testArrojarDNI()
+    public function testFunctionName()
     {
-        $r= $this->crear (37701467);
-        $this->assertEquals("37701467", $r->getDNI());
+        $a=1;
+        $a2=1;
+
+        $this->assertSame($a,$a2);
     }
+
+    // public function testArrojarDNI()
+    // {
+    //     $r= $this->crear (38597947);
+    //     $this->assertEquals("38597947", $r->getDNI());
+    // }
     
 
-    public function testArrojarSalario()
-    {
-        $r= $this->crear (20000);
-        $this->assertEquals("20000", $r->getSalario());
-    }
+    // public function testArrojarSalario()
+    // {
+    //     $r= $this->create (20000);
+    //     $this->assertEquals("20000", $r->getSalario());
+    // }
 
     // public function testSeleccionarSector()
     // {
-    //     $r = new \App\Empleado($sector);
-    //     $this->assertEquals ($sector, $r->sector());
+    //     $r = new \App\Empleado(sector);
+    //     $this->assertEquals (sector, $r->sector());
     // }
 
-    public function testObtenerSector()
-    {
-        return $this->sector;
-    }
+    // public function testObtenerSector()
+    // {
+    //     return $this->sector;
+    // }
 
 
-    public function test__toString()
-    {
-        $r = $this->crear ("Juan", "Rodriguez", 37701467, 50000);
-        $this->assertEquals("Adrian Gimenez 37701467 50000", $r->__toString());
-    }
+    // public function test__toString()
+    // {
+    //     $r = $this->create ("Adrian", "Gimenez", 30852194, 23500);
+    //     $this->assertEquals("Adrian Gimenez 30852194 23500", $r->__toString());
+    // }
+
 };
 
