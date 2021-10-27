@@ -1,26 +1,22 @@
 <?php
 
-class EmpleadoTest extends \PHPUnit\Framework\TestCase
-{
+abstract class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 
-    public function crear(
-        $nombre="Juan", $apellido="Rodriguez", $dni=37701467, $salario=50000, $sector="No especificado"
-    ){
-        $crear= new \app\Empleado($nombre, $apellido, $dni, $salario, $sector);
-        return $crear;
+    // Funcion para crear empleado
+
+    public function crear ($nombre = "Juan", 
+                            $apellido = "Rodriguez", 
+                            $dni = 37701467, 
+                            $salario = 5000, 
+                            $sector = "No especificado"){
+                                
+        $c = new \App\Empleado ($nombre, $apellido, $dni, $salario, $sector);
+        return $c;
     }
-    public function testNombreyApellido($nombre,$apellido) 
-    {
-        $c= $this->crear ();
-        $this->assertSame($nombre.$apellido, $c->getNombreApellido());
-    }
-
-    public function testFunctionName()
-    {
-        $a=1;
-        $a2=1;
-
-        $this->assertSame($a,$a2);
+    // 1 - Crear y obtener Nombre Y Apellido
+    public function testCrearYObtenerNombreYApellido(){
+        $c = $this->crear();
+        $this->assertEquals("Juan Rodriguez", $c->getNombreApellido());
     }
 
     // public function testArrojarDNI()
