@@ -18,37 +18,32 @@ abstract class EmpleadoTest extends \PHPUnit\Framework\TestCase{
         $c = $this->crear();
         $this->assertEquals("Juan Rodriguez", $c->getNombreApellido());
     }
+    // 2 - Crear y obtener DNI
+    public function testPuedeCrearYObtenerDNI(){
+        $c = $this->crear();
+        $this->assertEquals(37701467, $c->getDNI());
+    }
+    // 3 - Crear y obtener Salario
+    public function testCrearYObtenerSalario(){
+        $c = $this->crear();
+        $this->assertEquals(5000,$c->getSalario());
+    }
+    // 4- Crear y obtener getSector & setSector
+    public function testModificarSectorDeEmpleado(){
+        $c=$this->crear();
+        $sector = "Indefinido";
+        $this->assertEquals("No especificado",$c->getSector());
 
-    // public function testArrojarDNI()
-    // {
-    //     $r= $this->crear (38597947);
-    //     $this->assertEquals("38597947", $r->getDNI());
-    // }
-    
+        // Sector asignado
+        $c->setSector($sector);
 
-    // public function testArrojarSalario()
-    // {
-    //     $r= $this->create (20000);
-    //     $this->assertEquals("20000", $r->getSalario());
-    // }
-
-    // public function testSeleccionarSector()
-    // {
-    //     $r = new \App\Empleado(sector);
-    //     $this->assertEquals (sector, $r->sector());
-    // }
-
-    // public function testObtenerSector()
-    // {
-    //     return $this->sector;
-    // }
-
-
-    // public function test__toString()
-    // {
-    //     $r = $this->create ("Adrian", "Gimenez", 30852194, 23500);
-    //     $this->assertEquals("Adrian Gimenez 30852194 23500", $r->__toString());
-    // }
-
+        // Test asignacio de sector
+        $this->assertEquals("Indefinido",$c->getSector());
+    }
+    // 5 - Crear y obtener __toString
+    public function testConvertirEnCadena(){
+        $c=$this->crear();
+        $this->assertEquals("Juan Rodriguez 37701467 5000",$c);
+    }
 };
 
