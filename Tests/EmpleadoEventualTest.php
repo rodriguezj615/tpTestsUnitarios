@@ -13,7 +13,7 @@
 			return $empevent;
 		}
         // 1 - Crea y obtiene la comision
-		public function testLaComisionPorVentasFuncionaCorrectamente(){
+		public function testComisionPorVentasFuncionaCorrectamente(){
 			$empevent= $this->crear(); //( (500+600+700) /3 ) *0,05 = $30
 			$this-> assertEquals(30,$empevent->calcularComision()); 
 		}
@@ -23,7 +23,7 @@
 			$this->assertEquals(5030,$empevent->calcularIngresoTotal());
 		}
         // 3 - Crea y obtiene el monto en caso de que la venta obtenga negativo o cero
-		public function testNoSePuedeCrearConMontoDeVentaNegativoOCero(){
+		public function testNoCreaConMontoDeVentaNegativoOCero(){
 			$this->expectException(\Exception::class);
 			$ventas = [0,-500, 600];
 			$empevent = $this->crear(null,null,$ventas);

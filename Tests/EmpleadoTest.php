@@ -45,5 +45,30 @@ abstract class EmpleadoTest extends \PHPUnit\Framework\TestCase{
         $c=$this->crear();
         $this->assertEquals("Juan Rodriguez 37701467 5000",$c);
     }
+    // 6 - Empleado con Nombre vacio
+    public function testEmpleadoConNombreVacio(){
+        $this->expectException(\Exception::class);
+        $c= $this-> crear($nombre="");
+    }
+    // 7- Empleado con Apellido vacio
+    public function testEmpleadoConApellidoVacio(){
+        $this->expectException(\Exception::class);
+        $c= $this-> crear($nombre="Franco", $Apellido="");
+    }
+    // 8 - Empleado con DNI Vacio
+    public function testEmpleadoConDniVacio(){
+        $this->expectException(\Exception::class);
+        $c= $this-> crear(null, null,$dni="");
+    }
+    // 9 - Empleado con Salario Vacio
+    public function testEmpleadoConSalarioVacio(){
+        $this->expectException(\Exception::class);
+        $c= $this-> crear(null, null, null,$Salario="");
+    }
+    // 10 - Ingreso de DNI caracteres no numericos
+    public function testDniConCaracteresNoNumericos(){
+        $this->expectException(\Exception::class);
+        $c= $this-> crear(null, null, "4kh69");
+    }
 };
 
