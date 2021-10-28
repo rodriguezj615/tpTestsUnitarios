@@ -70,5 +70,10 @@ abstract class EmpleadoTest extends \PHPUnit\Framework\TestCase{
         $this->expectException(\Exception::class);
         $c= $this-> crear(null, null, "4kh69");
     }
+        // 11 - Sector no especificado en el formulario
+    public function testSectorNoEspecificado(){
+        $c= $this-> crear("Juan", "Rodriguez", 2, 50000);
+        $this->assertEquals("No especificado", $c->getSector());
+    }
 };
 
